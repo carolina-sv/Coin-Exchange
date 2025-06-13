@@ -1,41 +1,83 @@
-﻿// --- Taxa Fixa de conversão
+﻿
+using System;
+
 double dolar = 5.54;
 double euro = 6.36;
+double libra = 7.50;
+double iene = 26.13;
 double valorConvertido = 0;
+double valorReais;
 
-// --- Perguntar o usuário o valor
-Console.WriteLine("Digite o valor em reais(R$):");
-string entradaValor = Console.ReadLine();
 
-// --- Casting ==> convertendo string to double
-double valorReais = Convert.ToDouble(entradaValor);
-
-// ----------------------------------------------------
-// --- RN1: O valor digitado tem que ser maior que zero
-// ----------------------------------------------------
-if(valorReais <= 0)
+while (true)
 {
-    Console.WriteLine("O valor digitado tem que ser maior que zero!");
-    return;
+    Console.WriteLine("Digite o valor em reais (R$):");
+    string entradaValor = Console.ReadLine();
+
+
+    if (double.TryParse(entradaValor, out valorReais))
+    {
+        if (valorReais > 0 && valorReais < 100000)
+        {
+            Console.WriteLine($"Você digitou R$ {valorReais:F2}");
+            break;
+        }
+        else
+        {
+            Console.WriteLine("O valor deve ser maior que 0 e menor que 100.000.");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Valor inválido. Digite um número válido.");
+    }
 }
 
-// --- Perguntar o usuário o valor
-Console.WriteLine("Para qual moeda você deseja converter (dolar ou euro)");
-string entradaMoeda = Console.ReadLine();
+//Validação da moeda escolhida 💱
 
-if(entradaMoeda == "dolar")
+string entradaMoeda;
+
+while (true)
 {
-    valorConvertido = valorReais / dolar;
-    Console.WriteLine($"O valor em dolar é ${valorConvertido:F2}");
-    return;
+    Console.WriteLine("Para qual moeda você deseja converter? 💵dolar, 💶euro, 💷libra ou 💴iene");
+    entradaMoeda = Console.ReadLine()?.ToLower().Trim();
+
+    
+    if (!string.IsNullOrWhiteSpace(entradaMoeda) &&
+        entradaMoeda.All(char.IsLetter) &&
+        (entradaMoeda == "dolar" || entradaMoeda == "euro" || entradaMoeda == "libra" || entradaMoeda == "iene"))
+    {
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Moeda inválida. Digite apenas letras e escolha entre: dolar, euro, libra ou iene.");
+    }
 }
-else if (entradaMoeda == "euro")
+
+switch (entradaMoeda)
 {
-    valorConvertido = valorReais / euro;
-    Console.WriteLine($"O valor em Euro é €{valorConvertido:F2}");
-    return;
-} else
-{
-    Console.WriteLine($"Moeda não encontrada!");
-    return;
+    case "dolar":
+        valorConvertido = valorReais / dolar;
+        Console.WriteLine($"O valor em Dólar é 💵${valorConvertido:F2}");
+        break;
+
+    case "euro":
+        valorConvertido = valorReais / euro;
+        Console.WriteLine($"O valor em Euro é 💶€{valorConvertido:F2}");
+        break;
+
+    case "libra":
+        valorConvertido = valorReais / libra;
+        Console.WriteLine($"O valor em Libra é 💷£{valorConvertido:F2}");
+        break;
+
+    case "iene":
+        valorConvertido = valorReais / iene;
+        Console.WriteLine($"O valor em Iene é 💴¥{valorConvertido:F2}");
+        break;
+
+    default:
+        Console.WriteLine("Moeda não encontrada!");
+        break;
 }
