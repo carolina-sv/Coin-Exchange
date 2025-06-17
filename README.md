@@ -41,7 +41,7 @@ A simple and interactive console application to convert Brazilian Reais (BRL) to
 
 ```
 CoinExchange/
-├── Program.cs              # Main program logic and user interface
+├── Program.cs   
 ├── Helper/
 │   └── ConvertFunction.cs  # Conversion helper method
 ```
