@@ -1,22 +1,22 @@
-# 💱 CoinExchange - Currency Converter CLI in C#
+#  CoinExchange - Currency Converter CLI in C#
 
 A simple and interactive console application to convert Brazilian Reais (BRL) to major foreign currencies using fixed exchange rates.
 
-> 📌 Built in pure C#, designed for clarity, input validation, and clean user experience.
+>  Built in pure C#, designed for clarity, input validation, and clean user experience.
 
 ---
 
-## ✨ Features
+##  Features
 
-- 💵 Converts BRL to **USD**, **EUR**, **GBP**, and **JPY**
-- ✅ Input validation and helpful error messages
-- 🔄 Infinite loop for multiple conversions, with an option to exit
-- 🧠 Modular helper class (`ConvertFunction`) for currency conversion
-- 🧼 Clean and readable code with clear prompts and emoji feedback
+-  Converts BRL to **USD**, **EUR**, **GBP**, and **JPY**
+-  Input validation and helpful error messages
+-  Infinite loop for multiple conversions, with an option to exit
+-  Modular helper class (`ConvertFunction`) for currency conversion
+-  Clean and readable code with clear prompts and emoji feedback
 
 ---
 
-## 💸 Supported Currencies
+## Supported Currencies
 
 | Currency | Code  | Emoji | Rate (BRL → Currency) |
 |----------|-------|-------|------------------------|
@@ -27,7 +27,7 @@ A simple and interactive console application to convert Brazilian Reais (BRL) to
 
 ---
 
-## 🧠 How It Works
+##  How It Works
 
 1. The user is prompted to input a value in BRL.
 2. Input is validated (must be a number between 0 and 100,000).
@@ -37,7 +37,7 @@ A simple and interactive console application to convert Brazilian Reais (BRL) to
 
 ---
 
-## 🧱 Project Structure
+##  Project Structure
 
 ```
 CoinExchange/
@@ -48,7 +48,7 @@ CoinExchange/
 
 ---
 
-## 🖥️ Example Usage
+##  Example Usage
 
 ```bash
 Enter the amount in BRL 
@@ -66,9 +66,9 @@ Type: 💵 dolar | 💶 euro | 💷 libra | 💴 iene
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
-### 🛠 Requirements
+###  Requirements
 
 - [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or higher)
 
@@ -80,7 +80,7 @@ dotnet run
 
 ---
 
-## 🔧 ConvertFunction.cs
+##  ConvertFunction.cs
 
 This helper class performs the actual currency conversion:
 
@@ -97,7 +97,7 @@ public class ConvertFunction
 ---
 
 
-## 👤 Author
+##  Author
 
 Developed by [Carolina Viana]  
 Feel free to open issues or contribute to this project!
